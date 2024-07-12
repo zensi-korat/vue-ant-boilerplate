@@ -1,0 +1,3 @@
+.navigation {
+  @include flexbox(column, $gap: 14px);
+}
