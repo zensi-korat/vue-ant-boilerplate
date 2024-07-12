@@ -6,6 +6,7 @@ const { themeColor, toggleTheme } = useThemeSwitcher()
 import { MenuFoldOutlined, MenuUnfoldOutlined, VideoCameraOutlined } from '@ant-design/icons-vue'
 import { ref } from 'vue'
 import UserIcon from '../icons/UserIcon.vue'
+import InfoIcon from '../icons/InfoIcon.vue'
 const selectedKeys = ref<string[]>(['1'])
 const collapsed = ref<boolean>(false)
 </script>
@@ -31,13 +32,11 @@ const collapsed = ref<boolean>(false)
       <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
         <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
           <a-menu-item key="1">
-            <span>
-              <UserIcon />
-            </span>
+            <UserIcon />
             <span> <RouterLink to="/">Home</RouterLink></span>
           </a-menu-item>
           <a-menu-item key="2">
-            <video-camera-outlined />
+            <InfoIcon />
             <span> <RouterLink to="/about">About</RouterLink></span>
           </a-menu-item>
         </a-menu>
