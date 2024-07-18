@@ -10,7 +10,8 @@ export const globalTokens: Partial<AliasToken> = {
   //   colorPrimaryBorder: 'var(--primary-200)',
   //   colorPrimaryBorderHover: 'var(--primary-300)',
   //   colorPrimaryHover: 'var(--primary-400)',
-  colorPrimary: 'var(--primary-500)'
+  // colorPrimary: 'green'
+  colorPrimary: 'rgb(239, 83, 102)'
   //   colorPrimaryActive: 'var(--primary-600)',
   //   colorPrimaryTextHover: 'var(--primary-400)',
   //   colorPrimaryText: 'red',
@@ -21,20 +22,9 @@ export const componentTokens: OverrideToken = {
   Button: {
     borderRadius: 8,
     controlHeight: 36,
-    colorPrimary: 'red',
-    colorPrimaryBorder: 'red',
-    colorPrimaryHover: 'red',
-    colorPrimaryText: 'red',
-    colorBgTextActive: 'red',
-    colorBgSpotlight: 'red',
-    colorText: 'red',
-    colorPrimaryActive: 'red'
-  },
-  Menu: {
-    // itemActiveBg: 'red',
-    // itemSelectedBg: 'red'
+    colorPrimary: 'rgb(239, 83, 102)'
   },
   Select: {
-    colorPrimary: 'var(--primary-500)'
+    colorPrimary: 'rgb(239, 83, 102)'
   }
 }

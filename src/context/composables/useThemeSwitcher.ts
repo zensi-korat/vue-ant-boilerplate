@@ -30,6 +30,7 @@ onMounted(() => {
 export function useThemeSwitcher() {
   return {
     themeColor,
-    toggleTheme
+    toggleTheme,
+    setThemeColor
   }
 }

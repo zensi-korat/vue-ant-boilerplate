@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import { useThemeSwitcher } from '../../context/composables/useThemeSwitcher' // Adjust the path as needed
+import { RouterView, RouterLink } from 'vue-router'
+import { useThemeSwitcher } from '../../context/composables/useThemeSwitcher'
 
-const { themeColor, toggleTheme } = useThemeSwitcher()
-import { MenuFoldOutlined, MenuUnfoldOutlined, VideoCameraOutlined } from '@ant-design/icons-vue'
+const { themeColor, setThemeColor } = useThemeSwitcher()
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue'
 import { ref } from 'vue'
 import UserIcon from '../icons/UserIcon.vue'
 import InfoIcon from '../icons/InfoIcon.vue'
+
 const selectedKeys = ref<string[]>(['1'])
 const collapsed = ref<boolean>(false)
+
+const handleThemeChange = (value: string) => {
+  setThemeColor(value as 'default' | 'dark')
+}
 </script>
 
 <template>
@@ -22,9 +27,10 @@ const collapsed = ref<boolean>(false)
           @click="() => (collapsed = !collapsed)"
         />
         <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
-        <a-button @click="toggleTheme">
-          {{ themeColor === 'dark' ? 'Light Mode' : 'Dark Mode' }}
-        </a-button>
+        <a-select v-model:value="themeColor" @change="handleThemeChange" style="width: 120px">
+          <a-select-option value="default">Light Mode</a-select-option>
+          <a-select-option value="dark">Dark Mode</a-select-option>
+        </a-select>
       </div>
     </a-layout-header>
 
@@ -47,3 +53,14 @@ const collapsed = ref<boolean>(false)
     </a-layout>
   </a-layout>
 </template>
+
+<style scoped>
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trigger {
+  margin-left: 16px;
+}
+</style>
