@@ -1,33 +1,40 @@
 import type { Preview } from '@storybook/vue3'
-import { componentTokens, globalTokens } from '../src/config/token'
 import { setup } from '@storybook/vue3'
 import Antd from 'ant-design-vue'
+// import { addons } from '@storybook/preview-api'
 import 'ant-design-vue/dist/reset.css'
 import '../src/assets/styles/main.scss'
-import { storiesOf } from '@storybook/vue'
-import DarkModeWrapper from 'storybook-darkmode-vue/DarkModeWrapper'
-import DarkModeSample from './DarkModeSample'
-import 'storybook-darkmode-vue/register'
-
-storiesOf('Sample', module).add('sample1', () => ({
-  data: () => ({}),
-  components: {
-    DarkModeWrapper,
-    DarkModeSample
-  },
-  methods: {},
-  template: `
-    <div>
-      <DarkModeWrapper v-slot="{isDarkMode}">
-        <DarkModeSample :is-dark-mode="isDarkMode"/>
-      </DarkModeWrapper>
-    </div>
-  `
-}))
+// import { DARK_MODE_EVENT_NAME } from 'storybook-darkmode-vue'
+import { globalTokens, componentTokens } from '../src/config/token'
+// import { useThemeSwitcher } from '../src/context/composables/useThemeSwitcher'
 
 setup((app) => {
   app.use(Antd)
 })
+
+// const withDarkMode = (storyFn: any) => {
+//   const { setThemeColor } = useThemeSwitcher()
+//   const channel = addons.getChannel()
+
+//   const handleColorScheme = (isDarkMode: boolean) => {
+//     setThemeColor(isDarkMode ? 'dark' : 'default')
+//   }
+
+//   channel.on(DARK_MODE_EVENT_NAME, handleColorScheme)
+
+//   return {
+//     components: { Story: storyFn() },
+//     setup() {
+//       // Ensure cleanup when the story is unmounted
+//       return {
+//         onBeforeUnmount() {
+//           channel.off(DARK_MODE_EVENT_NAME, handleColorScheme)
+//         }
+//       }
+//     },
+//     template: '<Story />'
+//   }
+// }
 
 const withThemeProvider = (storyFn: any) => ({
   components: { Story: storyFn() },
