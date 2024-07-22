@@ -1,4 +1,7 @@
-import type { AliasToken, OverrideToken } from 'ant-design-vue/es/theme/interface'
+import type {
+  AliasToken,
+  OverrideToken
+} from 'ant-design-vue/es/theme/interface';
 
 export const globalTokens: Partial<AliasToken> = {
   //   fontFamily: `'Manrope', sans-serif`,
@@ -16,7 +19,7 @@ export const globalTokens: Partial<AliasToken> = {
   //   colorPrimaryTextHover: 'var(--primary-400)',
   //   colorPrimaryText: 'red',
   //   colorPrimaryTextActive: 'var(--primary-600)'
-}
+};
 
 export const componentTokens: OverrideToken = {
   Button: {
@@ -27,4 +30,4 @@ export const componentTokens: OverrideToken = {
   Select: {
     colorPrimary: 'rgb(239, 83, 102)'
   }
-}
+};

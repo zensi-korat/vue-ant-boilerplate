@@ -1,6 +1,6 @@
 // src/stories/Button.stories.ts
-import type { Meta, StoryFn } from '@storybook/vue3'
-import { Button } from 'ant-design-vue'
+import type { Meta, StoryFn } from '@storybook/vue3';
+import { Button } from 'ant-design-vue';
 
 export default {
   title: 'Ant Design/Button',
@@ -17,17 +17,17 @@ export default {
     },
     disabled: { control: 'boolean' }
   }
-} as Meta
+} as Meta;
 
 const Template: StoryFn = (args) => ({
   components: { Button },
   setup() {
-    return { args }
+    return { args };
   },
   template: '<Button v-bind="args">Button</Button>'
-})
+});
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 Primary.args = {
   type: 'primary'
-}
+};

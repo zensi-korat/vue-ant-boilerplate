@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomePage/HomeView.vue'
-import AboutView from '../views/AboutPage/AboutView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomePage/HomeView.vue';
+import AboutView from '../views/AboutPage/AboutView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +16,6 @@ const router = createRouter({
       component: AboutView
     }
   ]
-})
+});
 
-export default router
+export default router;

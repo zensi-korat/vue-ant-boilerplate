@@ -1,6 +1,6 @@
 // src/stories/Select.stories.ts
-import type { Meta, StoryFn } from '@storybook/vue3'
-import { Select } from 'ant-design-vue'
+import type { Meta, StoryFn } from '@storybook/vue3';
+import { Select } from 'ant-design-vue';
 
 export default {
   title: 'Ant Design/Select',
@@ -17,12 +17,12 @@ export default {
     },
     disabled: { control: 'boolean' }
   }
-} as Meta
+} as Meta;
 
 const Template: StoryFn = (args) => ({
   components: { Select },
   setup() {
-    return { args }
+    return { args };
   },
   template: `
     <Select v-bind="args" style="width: 200px;" placeholder="Select option">
@@ -31,10 +31,10 @@ const Template: StoryFn = (args) => ({
       <Select.Option value="option3">Option 3</Select.Option>
     </Select>
   `
-})
+});
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   mode: 'default',
   size: 'middle'
-}
+};

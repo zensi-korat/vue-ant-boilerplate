@@ -1,16 +1,16 @@
-import type { Preview } from '@storybook/vue3'
-import { setup } from '@storybook/vue3'
-import Antd from 'ant-design-vue'
+import type { Preview } from '@storybook/vue3';
+import { setup } from '@storybook/vue3';
+import Antd from 'ant-design-vue';
 // import { addons } from '@storybook/preview-api'
-import 'ant-design-vue/dist/reset.css'
-import '../src/assets/styles/main.scss'
+import 'ant-design-vue/dist/reset.css';
+import '../src/assets/styles/main.scss';
 // import { DARK_MODE_EVENT_NAME } from 'storybook-darkmode-vue'
-import { globalTokens, componentTokens } from '../src/config/token'
+import { globalTokens, componentTokens } from '../src/config/token';
 // import { useThemeSwitcher } from '../src/context/composables/useThemeSwitcher'
 
 setup((app) => {
-  app.use(Antd)
-})
+  app.use(Antd);
+});
 
 // const withDarkMode = (storyFn: any) => {
 //   const { setThemeColor } = useThemeSwitcher()
@@ -42,14 +42,14 @@ const withThemeProvider = (storyFn: any) => ({
     const theme = {
       token: globalTokens,
       components: componentTokens
-    }
+    };
 
     return {
       theme
-    }
+    };
   },
   template: '<a-config-provider :theme="theme"><Story /></a-config-provider>'
-})
+});
 
 const preview: Preview = {
   decorators: [withThemeProvider],
@@ -61,6 +61,6 @@ const preview: Preview = {
       }
     }
   }
-}
+};
 
-export default preview
+export default preview;
